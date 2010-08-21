@@ -7,7 +7,7 @@ versões.
 
 => Testado no Linux Ubuntu 10.4
 
-Baixei o script e execute:
+Baixe o script e execute:
 
 $ chmod +x rails-startup.sh
 $ ./rails-startup.sh
@@ -58,7 +58,7 @@ Você pode editar o script para instalar somente o que lhe interessa.
   rails 2: rails nome-do-programa
   rails 3: rails new nome-o-programa
 
-  => Escolha uma versão do ruby para seu projeto, crie uma gemset, use 
+  => Escolha uma versão do ruby para seu projeto, crie uma gemset, use
    esse set de gems, baixe as gems do seu projeto e instale o rails.
 
   => Entre no site do rvm: http://rvm.beginrescueend.com/ e saiba mais
@@ -70,9 +70,10 @@ COLABORAÇÃO
 -----------
 
 .Ajude a manter o script atualizado. Porte o script para outras versões
-do Linux e MAC OSX. 
-.Ajude a testá-lo em sua máquina. 
+do Linux e MAC OSX.
+.Ajude a testá-lo em sua máquina.
 .Reporte qualquer erro de funcionamento.
 .Inclua novas funcionalidades ao script.
 
 Enjoy!
+
