@@ -1,0 +1,78 @@
+RAILS STARTUP
+-------------
+
+Script de instalação do ambiente Ruby on Rails para Linux. Instala
+as principais ferramentas, editores, rubies e rails de diferentes
+versões.
+
+=> Testado no Linux Ubuntu 10.4
+
+Baixei o script e execute:
+
+$ chmod +x rails-startup.sh
+$ ./rails-startup.sh
+
+Aguarde alguns minutos e seu ambiente estará instalado.
+
+Script de Instalação do Ambiente de Desenvolvimento Ruby on Rails
+
+  . Todas as ferramentas básicas serão instaladas, incluindo:
+
+      - Os editores de texto: gmate e gvim -- com suporte a Rails,
+        além de plugins pré-instalados.
+      - O SQLite3 como banco de dados básico para os seus projetos.
+      - Git e Subversion para controle de versão.
+      - RVM para gerencimento das versões do Ruby.
+      - Ruby and Rails
+
+      Ruby:            Rails:
+
+      1.8.6-head       2.2.2
+      1.8.7-head       2.3.8
+      1.9.2-rc2        3.0.0.rc
+      1.9.3dev         3.0.0.rc #versão da cabeça de desenvolvimento
+
+      --------------------------------------------------------------
+
+Você pode editar o script para instalar somente o que lhe interessa.
+
+* Nenhuma gemset para rvm foi criada. Então você poderá usar o padrão já
+  instalado ou criar sua gemset para o seu projeto.
+
+  Para usar: rvm use versão-do-ruby
+  Para deixar default: rvm use versão-do-ruby --default
+
+  Para criar sua gemset: rvm gemset create minha-gemset
+  Para usar sua gemset com uma versão do ruby: rvm use ruby-x.x.x@sua-gemset
+  Para deixar default: rvm use ruby-x.x.x@sua-gemset --default
+
+  Após criar sua gemset instale o rails pois sua gemset estará zerada:
+  gem install rails -v 2.2.2 se sua versão do ruby for 1.8.6
+  gem install rails -v 2.3.8 se sua versão do ruby for 1.8.7
+  gem install rails --pre para versões acima do ruby 1.9.2
+
+  Para cada versão do ruby instalada existe uma gemset global:
+  rvm use rails-head@global
+
+  Lembrando que para criar um programa você usa:
+  rails 2: rails nome-do-programa
+  rails 3: rails new nome-o-programa
+
+  => Escolha uma versão do ruby para seu projeto, crie uma gemset, use 
+   esse set de gems, baixe as gems do seu projeto e instale o rails.
+
+  => Entre no site do rvm: http://rvm.beginrescueend.com/ e saiba mais
+   sobre como aproveitar suas funcionalidades.
+
+* Agora curta o Ruby on Rails instalado em sua máquina!!!
+
+COLABORAÇÃO
+-----------
+
+.Ajude a manter o script atualizado. Porte o script para outras versões
+do Linux e MAC OSX. 
+.Ajude a testá-lo em sua máquina. 
+.Reporte qualquer erro de funcionamento.
+.Inclua novas funcionalidades ao script.
+
+Enjoy!
