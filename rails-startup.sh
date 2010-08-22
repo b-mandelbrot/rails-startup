@@ -31,7 +31,7 @@ sudo apt-get update
 sudo apt-get -y install ruby
 
 #Instala git e subversion
-sudo apt-get -y install git-core subversion
+sudo apt-get -y install git-core gitk subversion
 
 #Clona meus aquivos do gmate no github, instala e limpa o ambiente
 cd ~ && git clone git://github.com/bkether/gmate.git && cd gmate && sh install.sh && cd ~ && sudo rm -rf gmate
@@ -67,18 +67,18 @@ source .bashrc
 rvm package install zlib ; rvm package install iconv ; rvm package install openssl ; rvm package install readline
 
 #Instala ruby-1.8.6-head e rails 2.2.2
-rvm install ruby-1.8.6-p399
-rvm use ruby-1.8.6-p399
+rvm install ruby-1.8.6
+rvm use ruby-1.8.6
 gem install rails -v 2.2.2 sqlite3-ruby
 
 #Instala ruby-1.8.7-head e rails 2.3.8
-rvm install ruby-1.8.7-p302
-rvm use ruby-1.8.7-p302
+rvm install ruby-1.8.7
+rvm use ruby-1.8.7
 gem install rails -v 2.3.8 sqlite3-ruby
 
 #Instala ruby-1.9.2-rc2 e rails 3.0.0.rc
-rvm install ruby-1.9.2-rc2
-rvm use ruby-1.9.2-rc2
+rvm install ruby-1.9.2
+rvm use ruby-1.9.2
 gem install rails --pre sqlite3-ruby
 
 #Instala ruby-head -- atualmente ruby-1.9.3dev e rails 3.0.0.rc
@@ -96,10 +96,10 @@ HELP:
 
 Versões instaladas:
 
-ruby-1.8.6-p399 => rails 2.2.2
-ruby-1.8.7-p302 => rails 2.3.8
-ruby-1.9.2-rc2  => rails 3.0.0.rc2
-ruby-head       => rails 3.0.0.rc2 #atualmente ruby-1.9.3dev
+ruby-1.8.6 => rails 2.2.2 -- ruby p399
+ruby-1.8.7 => rails 2.3.8 -- ruby p302
+ruby-1.9.2 => rails 3.0.0.rc -- ruby p0
+ruby-head  => rails 3.0.0.rc #atualmente ruby-1.9.3dev
 
 Você pode editar o script para instalar somente o que lhe interessa.
 
