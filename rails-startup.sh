@@ -18,7 +18,7 @@ Script de Instalação do Ambiente de Desenvolvimento Ruby on Rails
 
       1.8.6-p399       2.2.2
       1.8.7-p302       2.3.8
-      1.9.2-rc2        2.3.8 # se necessitar instale a versão 3 editando
+      1.9.2-p0         2.3.8 # se necessitar instale a versão 3 editando
                                o script
       1.9.3dev         3.0.0.rc #versão da cabeça de desenvolvimento irá mudar
                                  com o tempo
@@ -124,7 +124,7 @@ Versões instaladas:
 
 ruby-1.8.6 => rails 2.2.2 -- ruby p399
 ruby-1.8.7 => rails 2.3.8 -- ruby p302
-ruby-1.9.2 => rails 3.0.0.rc -- ruby p0
+ruby-1.9.2 => rails 2.3.8 -- ruby p302
 ruby-head  => rails 3.0.0.rc #atualmente ruby-1.9.3dev
 
 Você pode editar o script para instalar somente o que lhe interessa.
