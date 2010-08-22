@@ -23,68 +23,72 @@ Script de Instalação do Ambiente de Desenvolvimento Ruby on Rails
       --------------------------------------------------------------
 "
 
-##Atualiza os pacotes do apt-get
-#sudo apt-get update
+#Atualiza os pacotes do apt-get
+sudo apt-get update
 
-##Instala git e subversion
-#sudo apt-get -y install git-core subversion
+#Instala ruby
+sudo apt-get -y install ruby
 
-##Clona meus aquivos do gmate no github, instala e limpa o ambiente
-#cd ~ && git clone git://github.com/bkether/gmate.git && cd gmate && sh install.sh && cd ~ && sudo rm -rf gmate
+#Instala git e subversion
+sudo apt-get -y install git-core subversion
 
-##Instala ctags, vim e gim -- se não quiser comente
-#sudo apt-get -y install ctags vim vim-gnome
+#Clona meus aquivos do gmate no github, instala e limpa o ambiente
+cd ~ && git clone git://github.com/bkether/gmate.git && cd gmate && sh install.sh && cd ~ && sudo rm -rf gmate
 
-##Instala gvim plugins -- se não quiser comente
-#cd ~ && git clone git://github.com/bkether/vimfiles.git .vim && cd .vim
-#git submodule init && git submodule update && ln -s ~/.vim/vimrc ~/.vimrc
+#Instala ctags, vim e gim -- se não quiser comente
+sudo apt-get -y install ctags ncurses-term vim vim-gnome
 
-##Instala SQLite3 e biblioteca --se não quiser comente
-#sudo apt-get -y install sqlite3 libsqlite3-dev libsqlite3-0
+#Instala gvim plugins -- se não quiser comente
+cd ~ && git clone git://github.com/bkether/vimfiles.git .vim && cd .vim
+git submodule init && git submodule update && ln -s ~/.vim/vimrc ~/.vimrc
+cd ~/.vim/bundle/Command-T/ruby/command-t && ruby extconf.rb && make && cd ~
 
-##Instala RVM
-#sudo apt-get -y install curl && bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
+#Instala SQLite3 e biblioteca --se não quiser comente
+sudo apt-get -y install sqlite3 libsqlite3-dev libsqlite3-0
 
-##Instala algumas ferramentas e bibliotecas necessárias para MRI, REE e IronRuby
-#sudo apt-get -y install build-essential bison openssl libreadline5 libreadline-dev zlib1g zlib1g-dev libssl-dev libreadline-dev libxml2-dev autoconf mono-2.0-devel
+#Instala RVM
+sudo apt-get -y install curl && bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
 
-##rvm first install path loads
-#cp .bashrc .bashrc-bak
-#cd ~ && echo "[[ -s \"\$HOME/.rvm/scripts/rvm\" ]] && . \"\$HOME/.rvm/scripts/rvm\"  # This loads RVM into a shell session." >> .bashrc
+#Instala algumas ferramentas e bibliotecas necessárias para MRI, REE e IronRuby
+sudo apt-get -y install build-essential bison openssl libreadline5 libreadline-dev zlib1g zlib1g-dev libssl-dev libreadline-dev libxml2-dev autoconf mono-2.0-devel
 
-##Muda o prompt e adiciona a versão usada do ruby e o git branch
-#echo "export PS1='\[\033[38m\]\u\[\033[32m\] \w \[\033[1;33m\]\`~/.rvm/bin/rvm-prompt i v\`\[\033[0;31m\] \`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\\\\\*\ \(.+\)$/\(\\\\\\\\\1\)\ /\`\[\033[37m\]$\[\033[00m\] '" >> .bashrc
+#rvm first install path loads
+cp .bashrc .bashrc-bak
+cd ~ && echo "[[ -s \"\$HOME/.rvm/scripts/rvm\" ]] && . \"\$HOME/.rvm/scripts/rvm\"  # This loads RVM into a shell session." >> .bashrc
 
-##load new bash config
-#source .bashrc
+#Muda o prompt e adiciona a versão usada do ruby e o git branch
+echo "export PS1='\[\033[38m\]\u\[\033[32m\] \w \[\033[1;33m\]\`~/.rvm/bin/rvm-prompt i v\`\[\033[0;31m\] \`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\\\\\*\ \(.+\)$/\(\\\\\\\\\1\)\ /\`\[\033[37m\]$\[\033[00m\] '" >> .bashrc
 
-##Instala alguns packages importantes no rvm
-#rvm package install zlib ; rvm package install iconv ; rvm package install openssl ; rvm package install readline
+#load new bash config
+source .bashrc
 
-##Instala ruby-1.8.6-head e rails 2.2.2
-#rvm install ruby-1.8.6-head
-#rvm use ruby-1.8.6-head
-#gem install rails -v 2.2.2 sqlite3-ruby
+#Instala alguns packages importantes no rvm
+rvm package install zlib ; rvm package install iconv ; rvm package install openssl ; rvm package install readline
 
-##Instala ruby-1.8.7-head e rails 2.3.8
-#rvm install ruby-1.8.7-head
-#rvm use ruby-1.8.7-head
-#gem install rails -v 2.3.8 sqlite3-ruby
+#Instala ruby-1.8.6-head e rails 2.2.2
+rvm install ruby-1.8.6-head
+rvm use ruby-1.8.6-head
+gem install rails -v 2.2.2 sqlite3-ruby
 
-##Instala ruby-1.9.2-rc2 e rails 3.0.0.rc
-#rvm install ruby-1.9.2-rc2
-#rvm use ruby-1.9.2-rc2
-#gem install rails --pre sqlite3-ruby
+#Instala ruby-1.8.7-head e rails 2.3.8
+rvm install ruby-1.8.7-head
+rvm use ruby-1.8.7-head
+gem install rails -v 2.3.8 sqlite3-ruby
 
-##Instala ruby-head -- atualmente ruby-1.9.3dev e rails 3.0.0.rc
-#rvm install ruby-head
-#rvm use ruby-head
-#gem install rails --pre sqlite3-ruby
+#Instala ruby-1.9.2-rc2 e rails 3.0.0.rc
+rvm install ruby-1.9.2-rc2
+rvm use ruby-1.9.2-rc2
+gem install rails --pre sqlite3-ruby
 
-##Usa ruby-1.9.2-rc2 e rails 3.0.0.rc por padrão
-#rvm use ruby-head --default
+#Instala ruby-head -- atualmente ruby-1.9.3dev e rails 3.0.0.rc
+rvm install ruby-head
+rvm use ruby-head
+gem install rails --pre sqlite3-ruby
 
-#clear
+#Usa ruby-1.9.2-rc2 e rails 3.0.0.rc por padrão
+rvm use ruby-head --default
+
+clear
 echo "
 
 HELP:
