@@ -15,10 +15,11 @@ Script de Instalação do Ambiente de Desenvolvimento Ruby on Rails
 
       Ruby:            Rails:
 
-      1.8.6-head       2.2.2
-      1.8.7-head       2.3.8
+      1.8.6-p399       2.2.2
+      1.8.7-p302       2.3.8
       1.9.2-rc2        3.0.0.rc
-      1.9.3dev         3.0.0.rc #versão da cabeça de desenvolvimento
+      1.9.3dev         3.0.0.rc #versão da cabeça de desenvolvimento irá mudar
+                                 com o tempo
 
       --------------------------------------------------------------
 "
@@ -66,13 +67,13 @@ source .bashrc
 rvm package install zlib ; rvm package install iconv ; rvm package install openssl ; rvm package install readline
 
 #Instala ruby-1.8.6-head e rails 2.2.2
-rvm install ruby-1.8.6-head
-rvm use ruby-1.8.6-head
+rvm install ruby-1.8.6-p399
+rvm use ruby-1.8.6-p399
 gem install rails -v 2.2.2 sqlite3-ruby
 
 #Instala ruby-1.8.7-head e rails 2.3.8
-rvm install ruby-1.8.7-head
-rvm use ruby-1.8.7-head
+rvm install ruby-1.8.7-p302
+rvm use ruby-1.8.7-p302
 gem install rails -v 2.3.8 sqlite3-ruby
 
 #Instala ruby-1.9.2-rc2 e rails 3.0.0.rc
@@ -95,8 +96,8 @@ HELP:
 
 Versões instaladas:
 
-ruby-1.8.6-head => rails 2.2.2
-ruby-1.8.7-head => rails 2.3.8
+ruby-1.8.6-p399 => rails 2.2.2
+ruby-1.8.7-p302 => rails 2.3.8
 ruby-1.9.2-rc2  => rails 3.0.0.rc2
 ruby-head       => rails 3.0.0.rc2 #atualmente ruby-1.9.3dev
 
@@ -129,6 +130,10 @@ Você pode editar o script para instalar somente o que lhe interessa.
 
   => Entre no site do rvm: http://rvm.beginrescueend.com/ e saiba mais
    sobre como aproveitar suas funcionalidades.
+
+  => Uma boa prática é colocar o arquivo .rvmrc dentro do diretório do seus
+   projeto contendo a seguinte linha:
+   rvm use ruby-x.x.x@sua-gemset
 
 * Agora curta o Ruby on Rails instalado em sua máquina!!!
 
