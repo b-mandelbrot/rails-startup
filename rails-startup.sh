@@ -4,7 +4,7 @@ Script de Instalação do Ambiente de Desenvolvimento Ruby on Rails
 
 => Testado no Linux Ubuntu 10.4
 
-  . Todas as ferramentas básicas serão instaladas, incluindo:
+     . Todas as ferramentas básicas serão instaladas, incluindo:
 
       - Os editores de texto: gmate e gvim -- com suporte a Rails,
         além de plugins pré-instalados.
@@ -13,11 +13,13 @@ Script de Instalação do Ambiente de Desenvolvimento Ruby on Rails
       - RVM para gerencimento das versões do Ruby.
       - Ruby and Rails
 
+
       Ruby:            Rails:
 
       1.8.6-p399       2.2.2
       1.8.7-p302       2.3.8
-      1.9.2-rc2        3.0.0.rc
+      1.9.2-rc2        2.3.8 # se necessitar instale a versão 3 editando
+                               o script
       1.9.3dev         3.0.0.rc #versão da cabeça de desenvolvimento irá mudar
                                  com o tempo
 
@@ -57,6 +59,18 @@ sudo apt-get -y install build-essential bison openssl libreadline5 libreadline-d
 cp .bashrc .bashrc-bak
 cd ~ && echo "[[ -s \"\$HOME/.rvm/scripts/rvm\" ]] && . \"\$HOME/.rvm/scripts/rvm\"  # This loads RVM into a shell session." >> .bashrc
 
+#Converte para if para que o rvm funcione corretamente
+cd ~ && cp .bashrc .bashrc-bak
+sed '3a\if [[ -n "$PS1" ]]; then' .bashrc > x1
+sed '4a\export HISTCONTROL=ignoreboth' x1 > .bashrc
+sed '5a\fi' .bashrc > x1
+sed '6a\#EOF' x1 > .bashrc
+
+#Comenta linhas no .bash
+sed '9,14s/^/#/' .bashrc > x1
+cp x1 .bashrc
+rm x1
+
 #Muda o prompt e adiciona a versão usada do ruby e o git branch
 echo "export PS1='\[\033[38m\]\u\[\033[32m\] \w \[\033[1;33m\]\`~/.rvm/bin/rvm-prompt i v\`\[\033[0;31m\] \`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\\\\\*\ \(.+\)$/\(\\\\\\\\\1\)\ /\`\[\033[37m\]$\[\033[00m\] '" >> .bashrc
 
@@ -64,30 +78,42 @@ echo "export PS1='\[\033[38m\]\u\[\033[32m\] \w \[\033[1;33m\]\`~/.rvm/bin/rvm-p
 source .bashrc
 
 #Instala alguns packages importantes no rvm
-rvm package install zlib ; rvm package install iconv ; rvm package install openssl ; rvm package install readline
+rvm package install readline iconv curl openssl zlib autoconf ncurses pkgconfig gettext glib mono llvm libxml2
 
 #Instala ruby-1.8.6-head e rails 2.2.2
 rvm install ruby-1.8.6
 rvm use ruby-1.8.6
-gem install rails -v 2.2.2 sqlite3-ruby
+gem install rails -v 2.2.2
+
+#Instala a gem do sqlite3 - se não quiser comente
+#gem install sqlite3-ruby
 
 #Instala ruby-1.8.7-head e rails 2.3.8
 rvm install ruby-1.8.7
 rvm use ruby-1.8.7
-gem install rails -v 2.3.8 sqlite3-ruby
+gem install rails -v 2.3.8
+
+#Instala a gem do sqlite3 - se não quiser comente
+#gem install sqlite3-ruby
 
 #Instala ruby-1.9.2-rc2 e rails 3.0.0.rc
 rvm install ruby-1.9.2
 rvm use ruby-1.9.2
-gem install rails --pre sqlite3-ruby
+gem install rails -v 2.3.8
+
+#Instala a gem do sqlite3 - se não quiser comente
+gem install sqlite3-ruby
 
 #Instala ruby-head -- atualmente ruby-1.9.3dev e rails 3.0.0.rc
 rvm install ruby-head
 rvm use ruby-head
-gem install rails --pre sqlite3-ruby
+gem install rails --pre
+
+#Instala a gem do sqlite3 - se não quiser comente
+gem install sqlite3-ruby
 
 #Usa ruby-1.9.2-rc2 e rails 3.0.0.rc por padrão
-rvm use ruby-head --default
+rvm use ruby-1.9.2 --default
 
 clear
 echo "
