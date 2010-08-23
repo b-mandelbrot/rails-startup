@@ -10,19 +10,20 @@ Script de Instalação do Ambiente de Desenvolvimento Ruby on Rails
       - Os editores de texto: gmate e gvim -- com suporte a Rails,
         além de plugins pré-instalados.
       - O SQLite3 como banco de dados básico para os seus projetos.
+      - sqlitebrowser será instalado como ferramenta de navegação sqlite3.
       - Git e Subversion para controle de versão.
       - RVM para gerencimento das versões do Ruby.
-      - Ruby and Rails
+      - Ruby and Rails 2 e 3.
 
 
       Ruby:            Rails:
 
       1.8.6-p399       2.2.2
       1.8.7-p302       2.3.8
-      1.9.2-p0         2.3.8 # se necessitar instale a versão 3 editando
-                               o script
+      1.9.2-p0         2.3.8    # se necessitar instale a versão 3 editando
+                                  o script
       1.9.3dev         3.0.0.rc #versão da cabeça de desenvolvimento irá mudar
-                                 com o tempo
+                                  com o tempo
 
       --------------------------------------------------------------
 

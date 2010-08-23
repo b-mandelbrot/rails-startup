@@ -9,19 +9,20 @@ Script de Instalação do Ambiente de Desenvolvimento Ruby on Rails
       - Os editores de texto: gmate e gvim -- com suporte a Rails,
         além de plugins pré-instalados.
       - O SQLite3 como banco de dados básico para os seus projetos.
+      - sqlitebrowser será instalado como ferramenta de navegação sqlite3.
       - Git e Subversion para controle de versão.
       - RVM para gerencimento das versões do Ruby.
-      - Ruby and Rails
+      - Ruby and Rails 2 e 3.
 
 
       Ruby:            Rails:
 
       1.8.6-p399       2.2.2
       1.8.7-p302       2.3.8
-      1.9.2-p0         2.3.8 # se necessitar instale a versão 3 editando
-                               o script
+      1.9.2-p0         2.3.8    # se necessitar instale a versão 3 editando
+                                  o script
       1.9.3dev         3.0.0.rc #versão da cabeça de desenvolvimento irá mudar
-                                 com o tempo
+                                  com o tempo
 
       --------------------------------------------------------------
 "
@@ -47,7 +48,7 @@ git submodule init && git submodule update && ln -s ~/.vim/vimrc ~/.vimrc
 cd ~/.vim/bundle/Command-T/ruby/command-t && ruby extconf.rb && make && cd ~
 
 #Instala SQLite3 e biblioteca --se não quiser comente
-sudo apt-get -y install sqlite3 libsqlite3-dev libsqlite3-0
+sudo apt-get -y install sqlite3 sqlitebrowser libsqlite3-dev libsqlite3-0
 
 #Instala RVM
 sudo apt-get -y install curl && bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
@@ -86,7 +87,7 @@ rvm use ruby-1.8.6
 gem install rails -v 2.2.2
 
 #Instala a gem do sqlite3 - se não quiser comente
-#gem install sqlite3-ruby
+gem install sqlite3-ruby -v 1.2.5
 
 #Instala ruby-1.8.7-head e rails 2.3.8
 rvm install ruby-1.8.7
@@ -94,7 +95,7 @@ rvm use ruby-1.8.7
 gem install rails -v 2.3.8
 
 #Instala a gem do sqlite3 - se não quiser comente
-#gem install sqlite3-ruby
+gem install sqlite3-ruby -v 1.2.5
 
 #Instala ruby-1.9.2-rc2 e rails 3.0.0.rc
 rvm install ruby-1.9.2
